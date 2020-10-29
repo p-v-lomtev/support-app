@@ -45,10 +45,10 @@ function submitFormHandler(event) {
         })
 }
  
-// function openModal() {
-//     createModal('Авторизация', getAuthForm())
-//     document.getElementById('auth-form').addEventListener('submit', authFormHandler, {once: true})
-// }
+function openModal() {
+    createModal('Авторизация', getAuthForm())
+    document.getElementById('auth-form').addEventListener('submit', authFormHandler, {once: true})
+}
 
 function authFormHandler(event) {
     event.preventDefault()
