@@ -69,6 +69,10 @@ function authFormHandler(event) {
     .then(Question.fetch)
     .then(renderModalAfterAuth)
     .then(() => btn.disabled = false)
+    .then(() => {
+        email = ''
+        password = ''
+    })
 }
 
 function renderTasks() {
@@ -81,7 +85,7 @@ function renderTasks() {
         .then(Question.fetch)
         .then(renderModalAfterAuth)
     } else {
-        document.getElementById('list').innerHTML = '<p>Для того чтобы увидеть заявки, необходимо войти в систему, указав логин и пароль.</p>'
+        document.getElementById('list').innerHTML = '<p style="font-weight: bold"> Если хотите посмотреть как работает сервис, то используйте следующие тестовые данные: <p>Логин: user@mail.ru </p> <p>Пароль: !qerTy3</p></p> '
     }    
 }
 
