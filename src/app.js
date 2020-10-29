@@ -70,8 +70,7 @@ function authFormHandler(event) {
     .then(renderModalAfterAuth)
     .then(() => btn.disabled = false)
     .then(() => {
-        email = ''
-        password = ''
+        document.querySelectorAll('#form-auth .mui--is-not-empty').forEach(n => n.classList.remove('mui--is-not-empty'))
     })
 }
 
