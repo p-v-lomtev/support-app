@@ -1,3 +1,5 @@
+import { _apiKey } from "./_api"
+
 export function getAuthForm() {
     return `
     <form class="mui-form" id="auth-form">
@@ -15,7 +17,6 @@ export function getAuthForm() {
 }
 
 export function authHost(email, password) {
-    const _apiKey = 'AIzaSyCWRmLZKf4N1CnPr7asRfnrWf4A_yX9dC8'
     return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${_apiKey}`, {
         method: 'POST',
         body: JSON.stringify({ email, password, returnSecureToken: true }),
@@ -24,5 +25,7 @@ export function authHost(email, password) {
         }
     })
     .then(response => response.json())
-    .then(data => data.idToken)
+        .then(data => {
+           return data.idToken
+        })
 }
