@@ -12,7 +12,6 @@ export class Question {
                 question.id = res.name
                 return question
             })
-         .then(addToLocalStorage)
          .then(Question.renderList)
     }
 
@@ -34,8 +33,8 @@ export class Question {
         })
     }
     
-    static renderList() {
-        const questions = getQuestionFromLocalStorage()
+    static listToHtml(questions) {
+        // const questions = getQuestionFromLocalStorage()
         const html = questions.length
             ? questions.map(toCard).join('')
             : `<div class="mui--text-headline">Вы пока не создавали заявок</div>`
@@ -43,31 +42,35 @@ export class Question {
         list.innerHTML = html
     }
 
-    static listToHtml(questions) {
-        return questions.length
-            ? `<ul>${questions.map(q => `<li>${q.text}</li>`)}</ul>`
-            : '<p>Заявок пока нет</p>'
-    }
+    // static listToHtml(questions) {
+    //     return questions.length
+    //         ? `<ul>${questions.map(q => `<li>${q.text}</li>`).join('')}</ul>`
+    //         : '<p>Заявок пока нет</p>'
+    // }
 }
 
-function addToLocalStorage(question) {
-    const all = getQuestionFromLocalStorage()
-    all.push(question)
-    localStorage.setItem('questions', JSON.stringify(all))
-}
+// function addToLocalStorage(question) {
+//     const all = getQuestionFromLocalStorage()
+//     all.push(question)
+//     localStorage.setItem('questions', JSON.stringify(all))
+// }
 
-function getQuestionFromLocalStorage() {
-    return JSON.parse(localStorage.getItem('questions') || '[]')
-}
+// function getQuestionFromLocalStorage() {
+//     return JSON.parse(localStorage.getItem('questions') || '[]')
+// }
 
 function toCard(question) {
     return `
+    <div class="task">
     <div class="mui--text-black-54">
     <span class="status">${question.status}</span>
+    <span class="task_time">
     ${new Date(question.date).toLocaleDateString()}
     ${new Date(question.date).toLocaleTimeString()}
-    <span>${question.selectValue}</span>
+    </span>
+    <span class="select">${question.selectValue}</span>
     </div>
-    <div>${question.text}</div>
+    <div class="text_task">${question.text}</div>
+    </div>
     `
 }

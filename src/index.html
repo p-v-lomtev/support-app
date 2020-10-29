@@ -10,9 +10,24 @@
   </head>
   <body>
     <div id="sidebar">
-      <div class="mui--text-white mui--text-display1 mui--align-vertical">SAMPLE BLOG</div>
+      <div class="mui--text-white mui--text-display1 mui--align-vertical">24/7</div>
+      <div class="mui--text-white mui--text-display1 mui--align-vertical">Technical Support</div>
+      <p>Чтобы увидеть свои заявки, Вам необходимо авторизоваться на сайте.</p>
+      <br>
+      <br>
+      <form class="mui-form" id="auth-form">
+        <div class="mui-textfield mui-textfield--float-label">
+          <input style="color: #fff" type="email" autocomplete="off" id="email" required>
+          <label style="color: #fff" for="email">Email</label>
+        </div>
+        <div class="mui-textfield mui-textfield--float-label">
+          <input  style="color: #fff" type="password" autocomplete="off" id="password" required>
+          <label  style="color: #fff" for="password">Пароль</label>
+        </div>
+        <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary">Войти</button>
+      </form>
     </div>
-    <button class="mui-btn mui-btn--fab mui-btn--primary floating-btn" id="modal-btn">+</button>
+    <!-- <button class="mui-btn mui-btn--fab mui-btn--primary floating-btn" id="modal-btn">+</button> -->
     <div id="content" class="mui-container-fluid">
       <div class="mui-row">
         <div class="mui-col-sm-10 mui-col-sm-offset-1">
@@ -21,10 +36,9 @@
           <div class="mui--text-black-54 mui--text-body2">СОЗДАТЬ ЗАЯВКУ</div>
           <div class="mui-divider"></div>
           <br>
-          <!--Form-->
-          <form class="mui-form" id="form">
+            <form class="mui-form" id="form">
             <div class="mui-textfield mui-textfield--float-label">
-              <input type="text" id="name">
+              <input type="text" id="name" required>
               <label>Укажите ваше имя</label>
             </div>
             <div class="mui-textfield mui-textfield--float-label">
@@ -32,8 +46,12 @@
               <label>Укажите фамилию</label>
             </div>
             <div class="mui-textfield mui-textfield--float-label">
-              <input type="number" id="phone">
+              <input type="number" id="phone" required>
               <label>Телефон для связи</label>
+            </div>
+            <div class="mui-textfield mui-textfield--float-label">
+              <input type="email" id="email" required>
+              <label>Email</label>
             </div>
             <div class="mui-select">
               <select id="select">
@@ -48,7 +66,7 @@
               <textarea id="question-area" required minlength="10" maxlength="260"></textarea>
               <label>Описание проблемы</label>
             </div>
-            <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary" disabled id='submit-btn'>Задать вопрос</button>
+            <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary" disabled id='submit-btn'>ОТПРАВИТЬ ЗАЯВКУ</button>
           </form>
           <br>
           <br>

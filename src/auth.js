@@ -26,6 +26,7 @@ export function authHost(email, password) {
     })
     .then(response => response.json())
         .then(data => {
+            localStorage.setItem('idToken', JSON.stringify({ email, password }))
            return data.idToken
         })
 }
