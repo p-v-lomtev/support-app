@@ -39,7 +39,10 @@ export class Question {
             ? questions.map(toCard).join('')
             : `<div class="mui--text-headline">Вы пока не создавали заявок</div>`
         const list = document.getElementById('list')
-        list.innerHTML = html
+        list.innerHTML = `<div class="mui--text-white mui--text-display1 mui--align-vertical">Ваши заявки</div>
+        <br><br>
+        ${html}
+        `
     }
 
     // static listToHtml(questions) {

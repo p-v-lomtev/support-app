@@ -34,7 +34,7 @@
   * Sidebar CSS
   */
  
- #sidebar {
+ #sidebar, #sidebar_2 {
    background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
    padding: 15px;
    color: #fff;
@@ -49,6 +49,16 @@
      height: 100%;
      padding-top: 30px;
    }
+
+   #sidebar_2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    padding-top: 30px;
+  }
  }
  
  
@@ -58,6 +68,7 @@
  @media (min-width: 768px) {
    #content {
      margin-left: 360px;
+     width: calc(100% - 860px)
    }
  }
 
